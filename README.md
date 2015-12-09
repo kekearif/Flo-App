@@ -9,3 +9,5 @@ It is possible to use IBInspectables in Objective-C however default values canno
 App contains test data for 7 days and it doesn’t actually save the data for the current day either. The app is just meant to demonstrate Core Graphics’ capabilities.
 
 Optimised for iOS8+, iPhone5 - iphone6S+
+
+![alt text](Screenshots/screen1.png "Counter View")

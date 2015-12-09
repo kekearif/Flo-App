@@ -11,3 +11,4 @@ App contains test data for 7 days and it doesn’t actually save the data for th
 Optimised for iOS8+, iPhone5 - iphone6S+
 
 ![alt text](Screenshots/screen1.png "Counter View")
+![alt text](Screenshots/screen2.png "Graph View")

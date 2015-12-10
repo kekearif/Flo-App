@@ -81,8 +81,8 @@ IB_DESIGNABLE //This opens up the live design
         CGFloat angle = arcLengthPerGlass * (CGFloat)i + startAngle - M_PI/2;
         CGContextRotateCTM(context, angle);
         
-        //Trans;ate
-        CGContextTranslateCTM(context, 0, rect.size.height/2 - 30);
+        //Translate
+        CGContextTranslateCTM(context, 0, radius+arcWidth/2 - markersize);
         
         [markerPath fill];
         CGContextRestoreGState(context);

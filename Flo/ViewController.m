@@ -122,18 +122,17 @@
     NSNumber *average = [self.graphView.graphPoints valueForKeyPath:@"@avg.self"];
     self.averageLabel.text = [NSString stringWithFormat:@"%d", [average intValue]];
     
-    NSDate *todayDate = [NSDate date];
-    NSDateFormatter *myFormatter = [[NSDateFormatter alloc] init];
-    [myFormatter setDateFormat:@"EEEE"]; // day, like "Saturday"
-    [myFormatter setDateFormat:@"c"]; // day number, like 7 for saturday
-    int today = [[myFormatter stringFromDate:todayDate] intValue];
+    //Get the day number for today
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *comps = [gregorian components:NSCalendarUnitWeekday fromDate:[NSDate date]];
+    int today = (int)[comps weekday];
     
     NSMutableArray *days = [NSMutableArray arrayWithObjects:@"S", @"M", @"T", @"W", @"T", @"F", @"S", nil];
     
     //Order days along x-axis
     for(int x = (int)[self.graphView.graphPoints count]; x > 0; x--){
         
-        int day = today - (7 - x);
+        int day = today - 1 - (7 - x);
         if(day < 0){
             day += 7;
         }
